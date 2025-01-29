@@ -1,147 +1,119 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Coming Soon - Manta Labs</title>
 
     <style>
+      * {
+        margin: 0;
 
-        * {
+        padding: 0;
 
-            margin: 0;
+        box-sizing: border-box;
+      }
 
-            padding: 0;
+      body {
+        overflow: hidden;
 
-            box-sizing: border-box;
+        font-family: Arial, sans-serif;
 
-        }
+        color: white;
 
-        body {
+        text-align: center;
+      }
 
-            overflow: hidden;
+      .video-container {
+        position: fixed;
 
-            font-family: Arial, sans-serif;
+        top: 0;
 
-            color: white;
+        left: 0;
 
-            text-align: center;
+        width: 100%;
 
-        }
+        height: 100vh;
 
-        .video-container {
+        overflow: hidden;
+      }
 
-            position: fixed;
+      video {
+        position: absolute;
 
-            top: 0;
+        top: 50%;
 
-            left: 0;
+        left: 50%;
 
-            width: 100%;
+        transform: translate(-50%, -50%);
 
-            height: 100vh;
-            
-            overflow: hidden;
+        min-width: 100%;
 
-        }
+        min-height: 100%;
 
-        video {
+        width: auto;
 
-            position: absolute;
+        height: auto;
 
-            top: 50%;
+        object-fit: cover;
+      }
 
-            left: 50%;
+      .overlay {
+        position: absolute;
 
-            transform: translate(-50%, -50%);
+        top: 80%;
 
-            min-width: 100%;
+        left: 50%;
 
-            min-height: 100%;
+        transform: translate(-50%, -50%);
 
-            width: auto;
+        text-align: center;
+      }
 
-            height: auto;
+      h1 {
+        font-size: 3rem;
 
-            object-fit: cover;
+        margin-bottom: 1rem;
+      }
 
-        }
+      p {
+        font-size: 1.5rem;
 
-        .overlay {
+        margin-bottom: 1rem;
+      }
 
-            position: absolute;
+      .contact a {
+        color: white;
 
-            top: 80%;
+        text-decoration: none;
 
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            text-align: center;
-
-        }
-
-        h1 {
-
-            font-size: 3rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-        p {
-
-            font-size: 1.5rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-        .contact a {
-
-            color: white;
-
-            text-decoration: none;
-
-            font-size: 1.2rem;
-
-        }
-
+        font-size: 1.2rem;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="video-container">
+      <video autoplay loop muted playsinline>
+        <source src="GenAI_BlueSkyDemo_Final.mp4" type="video/mp4" />
 
-        <video autoplay loop muted>
-
-            <source src="GenAI_BlueSkyDemo_Final.mp4" type="video/mp4">
-
-            Your browser does not support the video tag.
-
-        </video>
-
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <div class="overlay">
+      <h1>Welcome to Manta Labs</h1>
 
-        <h1>Welcome to Manta Labs</h1>
+      <p>We are currently in stealth mode</p>
 
-        <p>We are currently in stealth mode</p>
+      <p>Check back soon</p>
 
-        <p>Check back soon</p>
-
-        <p class="contact"><a href="mailto:inquiries@mantalabs.ai">inquiries@mantalabs.ai</a></p>
-
+      <p class="contact">
+        <a href="mailto:inquiries@mantalabs.ai">inquiries@mantalabs.ai</a>
+      </p>
     </div>
-
-</body>
-
+  </body>
 </html>
