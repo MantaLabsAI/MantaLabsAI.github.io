@@ -1,0 +1,213 @@
+/* ============================================================
+   Manta Labs — Colors & Type Foundation
+   v1.0 · 2026 · Deep-Sea Precision
+   ============================================================
+   This stylesheet defines every brand-level token used across
+   product, marketing, and editorial surfaces. Reference tokens,
+   never hardcoded values.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Brand fonts · Syne and Inter are supplied by Manta Labs as variable fonts.
+   JetBrains Mono remains Google-Fonts hosted (SIL OFL) until official files
+   are delivered. */
+@font-face {
+  font-family: 'Syne';
+  src: url('fonts/Syne-VariableFont_wght.ttf') format('truetype-variations'),
+       url('fonts/Syne-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype-variations'),
+       url('fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype-variations'),
+       url('fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* ----------------------------------------------------------
+     CORE PALETTE — the four colors that carry the brand.
+     Aqua is the rarest. Never more than ~8% of a composition.
+     ---------------------------------------------------------- */
+  --c-deep-navy:   #0B1326;   /* Primary surface · Background     */
+  --c-aqua:        #49C5B6;   /* Accent · Active state · Energy   */
+  --c-deep-teal:   #0B828F;   /* Primary · Buttons · Containers   */
+  --c-oceanic:     #0684C9;   /* Secondary · Data · Links         */
+
+  /* ----------------------------------------------------------
+     EXTENDED PALETTE — state changes, surface hierarchy,
+     print fallbacks, editorial composition.
+     ---------------------------------------------------------- */
+  --c-abyss:       #060B1A;   /* Deepest surface · Card recessed  */
+  --c-tide:        #054450;   /* Pressed state · Teal shadow      */
+  --c-foam:        #8FE3D8;   /* Highlight · Aqua tint            */
+  --c-current:     #4FA9DD;   /* Hover · Oceanic tint             */
+  --c-bone:        #F4F7FB;   /* Light surface · Print neutral    */
+  --c-slate:       #5A6B82;   /* Body text on light · Muted UI    */
+  --c-white:       #FFFFFF;
+
+  /* ----------------------------------------------------------
+     SEMANTIC COLOR ROLES — reference these in product code.
+     Defaults are dark-mode (Deep Navy canvas).
+     ---------------------------------------------------------- */
+  --bg:            var(--c-deep-navy);
+  --bg-recessed:   var(--c-abyss);
+  --bg-elevated:   #111B33;            /* Subtle lift over Deep Navy */
+  --bg-light:      var(--c-bone);
+
+  --fg:            var(--c-bone);
+  --fg-muted:      #B6C2D6;            /* ~70% Bone for secondary    */
+  --fg-subtle:     var(--c-slate);
+  --fg-inverse:    var(--c-deep-navy);
+
+  --accent:        var(--c-aqua);
+  --accent-hover:  var(--c-foam);
+  --accent-press:  #2FA89A;
+
+  --primary:       var(--c-deep-teal);
+  --primary-hover: #0E97A6;
+  --primary-press: var(--c-tide);
+
+  --link:          var(--c-current);
+  --link-hover:    var(--c-foam);
+
+  --border:        rgba(11, 130, 143, 0.20); /* Deep Teal @ 20%      */
+  --border-strong: rgba(73, 197, 182, 0.40); /* Aqua @ 40% (focus)   */
+  --border-light:  rgba(255, 255, 255, 0.08);
+
+  --focus-ring:    0 0 0 1px rgba(73, 197, 182, 0.6),
+                   0 0 16px rgba(73, 197, 182, 0.35);
+
+  /* Status (derived from palette) */
+  --status-info:    var(--c-current);
+  --status-success: var(--c-aqua);
+  --status-warning: #E9A24B;
+  --status-danger:  #E26A6A;
+
+  /* ----------------------------------------------------------
+     CAUSTIC GRADIENTS — diagonal flow Deep Teal → Oceanic.
+     Use sparingly on hero surfaces. Never decoration.
+     ---------------------------------------------------------- */
+  --gradient-caustic: linear-gradient(135deg, #0B828F 0%, #0684C9 100%);
+  --gradient-deep:    linear-gradient(180deg, #0B1326 0%, #060B1A 100%);
+  --gradient-glow:    radial-gradient(60% 60% at 50% 0%,
+                        rgba(73, 197, 182, 0.18) 0%,
+                        rgba(11, 19, 38, 0) 70%);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — base stacks
+     ---------------------------------------------------------- */
+  --font-display: 'Syne', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Token-based scale from Brand Guidelines §04 */
+  --type-display-xl: 700 96px/1.05  var(--font-display);
+  --type-display-lg: 700 56px/1.08  var(--font-display);
+  --type-headline-lg:700 40px/1.15  var(--font-display);
+  --type-headline-md:600 28px/1.25  var(--font-display);
+  --type-headline-sm:600 20px/1.35  var(--font-body);
+  --type-body-lg:    400 18px/1.6   var(--font-body);
+  --type-body-md:    400 16px/1.6   var(--font-body);
+  --type-body-sm:    400 14px/1.5   var(--font-body);
+  --type-label-md:   600 14px/1.2   var(--font-body);
+  --type-label-sm:   700 11px/1.2   var(--font-body);
+  --type-mono-md:    400 14px/1.5   var(--font-mono);
+
+  /* ----------------------------------------------------------
+     SPACE & SHAPE
+     ---------------------------------------------------------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-md:  0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg:  0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-glow:0 0 32px rgba(73, 197, 182, 0.25);
+
+  /* Caustic shimmer used for loading states */
+  --shimmer-duration: 2400ms;
+
+  /* Motion — fluid, never bouncy. Cubic-bezier (0.16, 1, 0.3, 1). */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-micro: 220ms;
+  --dur-macro: 480ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE — drop these classes on elements directly,
+   or @extend them in component styles.
+   ============================================================ */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font: var(--type-body-md);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.display-xl { font: var(--type-display-xl); letter-spacing: -0.02em; }
+.display-lg { font: var(--type-display-lg); letter-spacing: -0.015em; }
+.headline-lg { font: var(--type-headline-lg); letter-spacing: -0.01em; }
+.headline-md { font: var(--type-headline-md); letter-spacing: -0.005em; }
+.headline-sm { font: var(--type-headline-sm); }
+.body-lg     { font: var(--type-body-lg); }
+.body-md     { font: var(--type-body-md); }
+.body-sm     { font: var(--type-body-sm); }
+.label-md    {
+  font: var(--type-label-md);
+  text-transform: none;
+}
+.label-sm    {
+  font: var(--type-label-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;   /* +60 ls per spec */
+}
+.mono-md     {
+  font: var(--type-mono-md);
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Prose defaults */
+h1 { font: var(--type-display-lg); letter-spacing: -0.015em; margin: 0 0 var(--s-5); }
+h2 { font: var(--type-headline-lg); letter-spacing: -0.01em;  margin: 0 0 var(--s-4); }
+h3 { font: var(--type-headline-md); margin: 0 0 var(--s-3); }
+h4 { font: var(--type-headline-sm); margin: 0 0 var(--s-3); }
+p  { font: var(--type-body-md); margin: 0 0 var(--s-4); max-width: 65ch; text-wrap: pretty; }
+small { font: var(--type-body-sm); color: var(--fg-muted); }
+code, kbd, samp { font: var(--type-mono-md); }
+a { color: var(--link); text-decoration: none; transition: color var(--dur-micro) var(--ease-out); }
+a:hover { color: var(--link-hover); }
+
+/* Tabular figures helper */
+.tabular { font-feature-settings: 'tnum' 1, 'lnum' 1; }
