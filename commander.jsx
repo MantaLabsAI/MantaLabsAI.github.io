@@ -21,7 +21,7 @@ function CommanderPage() {
               <span>macOS · Windows</span>
             </div>
           </div>
-          <FleetMock />
+          <FleetMock large />
         </div>
       </section>
 

@@ -956,3 +956,28 @@
 @media (max-width: 720px) {
   .stat-band-cards .inner { grid-template-columns: 1fr; }
 }
+
+
+/* Fleet mock in hero — prevent squishing */
+.p-hero .fleet {
+  min-height: 480px;
+}
+.p-hero .fleet .body {
+  min-height: 400px;
+}
+.p-hero .fleet .device {
+  grid-template-columns: minmax(0, 1.4fr) 60px 55px 70px 62px;
+  font-size: 11px;
+}
+.p-hero .fleet .toolbar {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.p-hero .fleet .toolbar button {
+  white-space: nowrap;
+  font-size: 11px;
+  padding: 5px 8px;
+}
+.p-hero .fleet .toolbar .pill {
+  font-size: 10px;
+}
