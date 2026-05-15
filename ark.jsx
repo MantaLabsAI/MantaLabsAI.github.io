@@ -15,17 +15,17 @@ function ArkPage() {
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>Request a demo</button>
               <a className="btn btn-secondary" onClick={(e) => { e.preventDefault(); document.getElementById('specs').scrollIntoView({behavior:'smooth'}); }}>Read the specs</a>
             </div>
-            <div className="keyline">
+            {/* <div className="keyline">
               <span>SDI cameras native</span>
               <span>SDI / USB input</span>
               <span>LTC sync</span>
               <span>Built-in web UI</span>
-            </div>
+            </div> */}
           </div>
           <div className="ark-device">
             <img src="assets/photos/OBR_on.jpg" alt="ARK Recorder powered on" style={{width:'100%', height:'100%', objectFit:'cover', mixBlendMode:'lighten', opacity:0.9, position:'absolute', inset:0, borderRadius:'inherit'}} />
             <span className="tag" style={{background:'rgba(6,11,26,0.7)', padding:'4px 8px', borderRadius:4}}>ARK RECORDER</span>
-            <span className="tag-r" style={{background:'rgba(6,11,26,0.7)', padding:'4px 8px', borderRadius:4, color:'var(--fg-muted)'}}>ON-BODY · SDI CAMERAS</span>
+            <span className="tag-r" style={{background:'rgba(6,11,26,0.7)', padding:'4px 8px', borderRadius:4, color:'var(--fg-muted)'}}>ON-BODY · SDI / USB CAMERAS</span>
           </div>
         </div>
       </section>
