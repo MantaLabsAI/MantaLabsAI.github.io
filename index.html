@@ -1,119 +1,80 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+<meta charset="utf-8">
+<title>Manta Labs — ARK · Recording infrastructure for facial motion capture</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Manta Labs builds ARK — purpose-built recording infrastructure for facial motion capture. ARK Recorder captures on-body. ARK Commander controls the fleet.">
+<link rel="icon" type="image/svg+xml" href="assets/logos/manta-glyph-aqua.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles2.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div id="root"></div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="shell.jsx"></script>
+<script type="text/babel" src="home.jsx"></script>
+<script type="text/babel" src="ark.jsx"></script>
+<script type="text/babel" src="commander.jsx"></script>
+<script type="text/babel" src="about.jsx"></script>
+<script type="text/babel" src="gallery.jsx"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accentLevel": "balanced",
+    "showFleetSection": true,
+    "heroHeadline": "Actor to artist. ARK in between."
+  }/*EDITMODE-END*/;
 
-    <title>Coming Soon - Manta Labs</title>
+  function App() {
+    const [route] = window.useRoute();
+    const [t, setTweak] = (typeof useTweaks === 'function') ? useTweaks(TWEAK_DEFAULTS) : [TWEAK_DEFAULTS, ()=>{}];
 
-    <style>
-      * {
-        margin: 0;
+    useEffect(() => { if (window.lucide) lucide.createIcons(); }, [route]);
 
-        padding: 0;
+    let Page;
+    if (route.startsWith('/ark')) Page = window.ArkPage;
+    else if (route.startsWith('/commander')) Page = window.CommanderPage;
+    else if (route.startsWith('/contact')) Page = window.ContactPage;
+    else if (route.startsWith('/about')) Page = window.AboutPage;
+    else if (route.startsWith('/gallery')) Page = window.GalleryPage;
+    else Page = window.HomePage;
 
-        box-sizing: border-box;
-      }
+    return (
+      <>
+        <window.Nav route={route} />
+        <main><Page tweaks={t} /></main>
+        <window.Footer />
+        {window.TweaksPanel ? (
+          <window.TweaksPanel title="Tweaks">
+            <window.TweakSection label="Hero">
+              <window.TweakText label="Headline" value={t.heroHeadline}
+                onChange={(v)=>setTweak('heroHeadline', v)} />
+            </window.TweakSection>
+            <window.TweakSection label="Sections">
+              <window.TweakToggle label="Show fleet preview on home"
+                value={t.showFleetSection}
+                onChange={(v)=>setTweak('showFleetSection', v)} />
+            </window.TweakSection>
+            <window.TweakSection label="Accent level">
+              <window.TweakRadio
+                value={t.accentLevel}
+                options={['subtle','balanced','loud']}
+                onChange={(v)=>setTweak('accentLevel', v)}
+              />
+            </window.TweakSection>
+          </window.TweaksPanel>
+        ) : null}
+      </>
+    );
+  }
 
-      body {
-        overflow: hidden;
-
-        font-family: Arial, sans-serif;
-
-        color: white;
-
-        text-align: center;
-      }
-
-      .video-container {
-        position: fixed;
-
-        top: 0;
-
-        left: 0;
-
-        width: 100%;
-
-        height: 100vh;
-
-        overflow: hidden;
-      }
-
-      video {
-        position: absolute;
-
-        top: 50%;
-
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        min-width: 100%;
-
-        min-height: 100%;
-
-        width: auto;
-
-        height: auto;
-
-        object-fit: cover;
-      }
-
-      .overlay {
-        position: absolute;
-
-        top: 80%;
-
-        left: 50%;
-
-        transform: translate(-50%, -50%);
-
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 3rem;
-
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-
-        margin-bottom: 1rem;
-      }
-
-      .contact a {
-        color: white;
-
-        text-decoration: none;
-
-        font-size: 1.2rem;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="video-container">
-      <video autoplay loop muted playsinline>
-        <source src="GenAI_BlueSkyDemo_Final.mp4" type="video/mp4" />
-
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <div class="overlay">
-      <h1>Welcome to Manta Labs</h1>
-
-      <p>We are currently in stealth mode</p>
-
-      <p>Check back soon</p>
-
-      <p class="contact">
-        <a href="mailto:inquiries@mantalabs.ai">inquiries@mantalabs.ai</a>
-      </p>
-    </div>
-  </body>
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
 </html>
