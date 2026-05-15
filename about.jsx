@@ -29,7 +29,7 @@ function AboutPage() {
               Manta Labs builds ARK — a platform that records at the source, on the actor's body, and manages the entire fleet from one screen. The master file never depends on the network. The take is never at risk.
             </p>
             <p style={{font:'var(--type-body-lg)', color:'var(--fg-muted)', marginBottom:0}}>
-              ARK Recorder is a purpose-built custom system, not repurposed from off-the-shelf hardware that's too big for the actor. Designed to be compact yet powerful, allowing ARK to grow with your stage and enable amazing machine learning possibilities in the future.
+              ARK Recorder is a purpose-built custom system, not repurposed from off-the-shelf hardware that's too big for the actor. Designed to be compact yet powerful, allowing ARK to grow with your stage and expand with new on-device capabilities over time.
             </p>
           </div>
         </div>

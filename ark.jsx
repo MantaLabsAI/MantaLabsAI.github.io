@@ -39,8 +39,8 @@ function ArkPage() {
           <div className="feature-grid">
             <Feature icon="hard-drive" title="On-device recording">The master writes to internal SSD on the actor's body. No network dependency. Drop the link, keep the take.</Feature>
             <Feature icon="plug" title="Multi-input">2× 3G-SDI, 3× USB 3.2, and LTC input (continuous sync, not jam). Connect headcams, lav mics, and lights.</Feature>
-            <Feature icon="feather" title="Lightweight and wearable">Only 12 oz. Clips to a belt. 2x Hot-swap LEMO for your wearable power source. 43Ah gets you 2.5 hours on-body recording.</Feature>
-            <Feature icon="wifi-off" title="Network-optional">Record on the fly. Connect directly via AP mode, your studios Wi-Fi, over USB-C or work fully offline with the physical buttons.</Feature>
+            <Feature icon="feather" title="Lightweight and wearable">Only 12 oz. Clips to a belt. 2× hot-swap LEMO for your wearable power source. 43Ah gets you 2.5 hours on-body recording.</Feature>
+            <Feature icon="wifi-off" title="Network-optional">Record on the fly. Connect via AP mode, your studio's Wi-Fi, or USB-C — or work fully offline with the physical buttons.</Feature>
             <Feature icon="cpu" title="Edge compute built in">More than a recorder. On-board processing opens the door to features that used to require a workstation on set.</Feature>
             <Feature icon="blocks" title="Integrated">API, Samba shares, record triggers. Build ARK into your pipeline — it doesn't replace it.</Feature>
           </div>
@@ -111,7 +111,7 @@ function ArkPage() {
             <Row k="Display" v="OLED status display · RGB LED indicator" />
             <Row k="Compute" v="Edge-class on-board processing" />
             <Row k="API" v="API for integration and automation" />
-            <Row k="Control" v="Built-in web UI · ARK Commander · Physical Buttons" />
+            <Row k="Control" v="Built-in web UI · ARK Commander · Physical buttons" />
           </div>
         </div>
       </section>

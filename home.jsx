@@ -28,7 +28,7 @@ function HomePage({ accent }) {
               <em>ARK Recorder</em> is a wearable lightweight recording device — capture in your volume, at your desk or wherever production takes you.
             </p>
             <p className="lede lede-sub">
-              <em>ARK Commander</em> is your motion capture battle station. It provides total control of your ARK Recorder fleet and manages every aspect of your recording pipeline.
+              <em>ARK Commander</em> is your motion capture command center. It provides total control of your ARK Recorder fleet and manages every aspect of your recording pipeline.
             </p>
             <div className="ctas">
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>
@@ -82,7 +82,7 @@ function ProductSplit() {
       <div className="head">
         <span className="eyebrow">Two products. One platform.</span>
         <h2>A recorder small enough to wear. Software powerful enough to run the stage.</h2>
-        <p>Each ARK Recorder can be self-contained — record, monitor, and pull footage from its built-in interface. ARK Commander brings the studio layer: project hierarchy, fleet-wide sync, automated naming and record triggers to any of your mocap systems.</p>
+        <p>Each ARK Recorder can be self-contained — record, monitor, and pull footage from its built-in interface. ARK Commander brings the studio layer: project hierarchy, fleet-wide sync, automated file naming and record triggers to any of your mocap systems.</p>
       </div>
       <div className="grid">
         <div className="product-card">
@@ -91,7 +91,7 @@ function ProductSplit() {
           <p className="tagline">Captures headcam footage directly to internal storage — on the actor without worrying about wireless interruption. Works standalone via its built-in web interface or network control under ARK Commander.</p>
           <div className="visual">
             <div style={{position:'absolute', inset:0, background:'var(--c-deep-navy)', overflow:'hidden', borderRadius:'inherit', display:'flex', alignItems:'center', justifyContent:'center'}}>
-              <img src="assets/photos/OBR_bebob_nobackground.png" alt="ARK Recorder with Bebob A45 battery" style={{width:'100%', height:'100%', objectFit:'cover'}} />
+              <img src="assets/photos/OBR_bebob_nobackground.webp" alt="ARK Recorder with Bebob A45 battery" style={{width:'100%', height:'100%', objectFit:'cover'}} />
             </div>
           </div>
           <div className="footer-row">
