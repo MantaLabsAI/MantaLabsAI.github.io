@@ -21,6 +21,7 @@
 <script type="text/babel" src="home.jsx"></script>
 <script type="text/babel" src="ark.jsx"></script>
 <script type="text/babel" src="commander.jsx"></script>
+<script type="text/babel" src="about.jsx"></script>
 <script type="text/babel" src="gallery.jsx"></script>
 <script type="text/babel">
   const { useState, useEffect } = React;
@@ -40,6 +41,7 @@
     if (route.startsWith('/ark')) Page = window.ArkPage;
     else if (route.startsWith('/commander')) Page = window.CommanderPage;
     else if (route.startsWith('/contact')) Page = window.ContactPage;
+    else if (route.startsWith('/about')) Page = window.AboutPage;
     else if (route.startsWith('/gallery')) Page = window.GalleryPage;
     else Page = window.HomePage;
 

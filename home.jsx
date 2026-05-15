@@ -4,6 +4,18 @@
 function HomePage({ accent }) {
   return (
     <div className="page">
+      <section className="company-banner">
+        <div className="inner company-banner-layout">
+          <div className="company-glyph">
+            <img src="assets/logos/manta-glyph-aqua.svg" alt="Manta Labs" />
+          </div>
+          <div className="company-banner-text">
+            <span className="eyebrow">Manta Labs</span>
+            <p>Precision tools for facial motion capture. Hardware and software built for the people who capture performance.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="hero">
         <div className="inner">
           <div>
@@ -13,10 +25,10 @@ function HomePage({ accent }) {
               ARK is purpose-built recording infrastructure for facial motion capture.
             </p>
             <p className="lede lede-sub">
-              <em>ARK Recorder</em> captures video in a lightweight standalone device — wireless, untethered, worn on-body or taken anywhere.
+              <em>ARK Recorder</em> is a wearable lightweight recording device — capture in your volume, at your desk or wherever production takes you.
             </p>
             <p className="lede lede-sub">
-              <em>ARK Commander</em> controls, manages, and syncs every device from one screen.
+              <em>ARK Commander</em> is your motion capture battle station. It provides total control of your ARK Recorder fleet and manages every aspect of your recording pipeline.
             </p>
             <div className="ctas">
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>
@@ -42,7 +54,7 @@ function HomePage({ accent }) {
         <div className="inner">
           <div className="stat-card">
             <div className="stat-card-icon"><i data-lucide="shirt"></i></div>
-            <div className="num">Worn</div>
+            <div className="num">Wearable</div>
             <div className="label">On the actor. Lightweight, wireless, out of the way.</div>
           </div>
           <div className="stat-card">
@@ -69,14 +81,14 @@ function ProductSplit() {
     <section className="product-split">
       <div className="head">
         <span className="eyebrow">Two products. One platform.</span>
-        <h2>Hardware that records. Software that runs the room.</h2>
-        <p>Each ARK Recorder can be self-contained — record, monitor, and pull footage from its built-in interface. ARK Commander brings the studio layer: project hierarchy, fleet-wide sync, automated naming, and trigger integration with body mocap.</p>
+        <h2>A recorder small enough to wear. Software powerful enough to run the stage.</h2>
+        <p>Each ARK Recorder can be self-contained — record, monitor, and pull footage from its built-in interface. ARK Commander brings the studio layer: project hierarchy, fleet-wide sync, automated naming and record triggers to any of your mocap systems.</p>
       </div>
       <div className="grid">
         <div className="product-card">
           <span className="pkind">Hardware · ARK Recorder</span>
           <h3>On-body recording for facial performance capture.</h3>
-          <p className="tagline">Captures headcam footage directly to internal storage — on the actor, untethered from the cart. Works standalone via its built-in web interface, or networked under ARK Commander.</p>
+          <p className="tagline">Captures headcam footage directly to internal storage — on the actor without worrying about wireless interruption. Works standalone via its built-in web interface or network control under ARK Commander.</p>
           <div className="visual">
             <div style={{position:'absolute', inset:0, background:'var(--c-deep-navy)', overflow:'hidden', borderRadius:'inherit', display:'flex', alignItems:'center', justifyContent:'center'}}>
               <img src="assets/photos/OBR_bebob_nobackground.png" alt="ARK Recorder with Bebob A45 battery" style={{width:'90%', height:'90%', objectFit:'contain'}} />
@@ -97,7 +109,7 @@ function ProductSplit() {
         <div className="product-card">
           <span className="pkind">Software · ARK Commander</span>
           <h3>Fleet control, project management, and trigger sync.</h3>
-          <p className="tagline">Arm, record, monitor, and ingest from every ARK Recorder on stage. Manage Projects, Sessions, Shots, and Takes. Send and receive triggers to body mocap systems over UDP.</p>
+          <p className="tagline">Arm, record, monitor, and ingest from every ARK Recorder on stage. Manage Projects, Sessions, Shots, and Takes. Send and receive record triggers to body mocap systems.</p>
           <div className="visual">
             <CommanderPreview />
           </div>
@@ -105,7 +117,7 @@ function ProductSplit() {
             <div className="specs">
               <span><b>macOS · Win</b></span>
               <span><b>LTC sync</b></span>
-              <span><b>UDP triggers</b></span>
+              <span><b>Record triggers</b></span>
             </div>
             <button className="more" onClick={go('/commander')}>
               Explore Commander <i data-lucide="arrow-right"></i>
@@ -246,7 +258,6 @@ function CTASection() {
         <p>Tell us about your headcam setup, your stage, and your pipeline. We'll come back with a configuration and a date for a demo.</p>
         <div className="ctas">
           <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>Request a demo</button>
-          <button className="btn btn-secondary" onClick={() => location.hash = '/ark'}>Explore ARK Recorder</button>
         </div>
       </div>
     </section>

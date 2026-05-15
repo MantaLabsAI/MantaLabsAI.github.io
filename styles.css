@@ -133,8 +133,8 @@ button { font-family: inherit; }
 /* ================ HERO ================ */
 .hero {
   position: relative; overflow: hidden;
-  padding: clamp(110px, 14vh, 160px) clamp(20px, 4vw, 56px) clamp(64px, 10vh, 120px);
-  min-height: 88vh;
+  padding: clamp(56px, 6vh, 80px) clamp(20px, 4vw, 56px) clamp(64px, 10vh, 120px);
+  min-height: auto;
   display: flex; align-items: center;
 }
 .hero::before {
@@ -348,4 +348,68 @@ button { font-family: inherit; }
     height: 1px;
   }
   .split-half { min-height: 200px; }
+}
+
+
+/* ============ COMPANY BANNER ============ */
+.company-banner {
+  padding: clamp(100px, 12vh, 140px) clamp(20px, 4vw, 56px) clamp(32px, 4vh, 48px);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.company-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(40% 70% at 15% 50%, rgba(73,197,182,0.08), transparent 70%);
+  pointer-events: none;
+}
+.company-banner-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  position: relative;
+}
+.company-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.company-banner p {
+  font: 400 clamp(17px, 1.8vw, 22px)/1.5 var(--font-body);
+  color: var(--fg-muted);
+  margin: 0;
+  max-width: 55ch;
+}
+.company-glyph {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  background: rgba(73, 197, 182, 0.06);
+  border: 1px solid rgba(73, 197, 182, 0.2);
+  box-shadow: 0 0 48px rgba(73, 197, 182, 0.1);
+}
+.company-glyph img {
+  width: 80px;
+  height: 80px;
+}
+@media (max-width: 600px) {
+  .company-banner-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .company-banner-text { align-items: center; }
+  .company-glyph {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  .company-glyph img { width: 56px; height: 56px; }
 }

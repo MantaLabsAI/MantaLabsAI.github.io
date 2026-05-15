@@ -9,15 +9,15 @@ function CommanderPage() {
             <span className="eyebrow dot">Software · ARK Commander</span>
             <h1>One screen. The whole <em>stage.</em></h1>
             <p className="lede">
-              ARK Commander controls every ARK Recorder on your network from a single interface. Manage Projects, Sessions, Shots, and Takes. Send and receive triggers to body mocap systems. Sync footage and get it into the pipeline — named, organized, and ready.
+              ARK Commander controls every ARK Recorder on your network from a single interface. Manage Projects, Sessions, Shots, and Takes. Send and receive triggers to your mocap systems. Sync footage and get it into the pipeline — named, organized, and ready.
             </p>
             <div className="ctas">
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>Request a demo</button>
-              <a className="btn btn-secondary" href="#workflow">See the workflow</a>
+              {/* <a className="btn btn-secondary" href="#workflow">See the workflow</a> */}
             </div>
             <div className="keyline">
               <span>Project · Session · Shot · Take</span>
-              <span>UDP trigger sync</span>
+              <span>Record triggers</span>
               <span>macOS · Windows</span>
             </div>
           </div>
@@ -29,19 +29,16 @@ function CommanderPage() {
         <div className="container">
           <div className="head">
             <span className="eyebrow">What Commander does</span>
-            <h2>Fleet control, project management, and trigger sync in one application.</h2>
-            <p>ARK Commander is the control layer for studios running multiple ARK Recorders. It replaces the walk-the-floor workflow with a single operator, a single screen, and a structured take pipeline.</p>
+            <h2>Fleet control and project management in one application.</h2>
+            <p>ARK Commander is the control layer for studios running ARK Recorders. It replaces the walk-the-floor workflow with a single operator, a single screen, and a structured take pipeline.</p>
           </div>
           <div className="feature-grid">
-            <Feature icon="circle-dot" title="Arm and record">One-tap arm-all and rec-all across every connected ARK Recorder. Per-actor overrides for partial takes.</Feature>
-            <Feature icon="folders" title="Project hierarchy">Organize work into Projects, Sessions, Shots, and Takes. Labels propagate to every device. Files arrive named correctly.</Feature>
-            <Feature icon="radio" title="UDP trigger sync">Send and receive triggers to body motion capture systems. Supported: OptiTrack, Vicon, Rokoko, Manus, Peel Capture, Movella.</Feature>
-            <Feature icon="clock" title="Frame-accurate sync">LTC distributes across the network. Every ARK Recorder stays frame-locked across the entire shoot day.</Feature>
-            <Feature icon="activity" title="Live fleet monitor">Battery, storage, link quality, signal lock, and rec state — surfaced for every device at once. No walking the floor.</Feature>
-            <Feature icon="download" title="Footage ingest">When a take ends, Commander pulls the masters to your studio NAS. Footage arrives organized by Project, Session, Shot, and Take.</Feature>
-            <Feature icon="eye" title="NDI preview">Low-latency proxy preview from any ARK Recorder, on any monitor running NDI on the stage network.</Feature>
-            <Feature icon="bell" title="Alerts that matter">Battery low, storage low, link lost, sync drifted — Commander tells you before the director does.</Feature>
-            <Feature icon="terminal" title="Scriptable">REST and WebSocket API. Drive Commander from your existing stage automation, or build your own control surface.</Feature>
+            <Feature icon="circle-dot" title="Arm and record">One-tap arm-all and rec-all across every connected ARK Recorder.</Feature>
+            <Feature icon="folders" title="Project hierarchy">Organize work into Projects, Sessions, Shots, and Takes. Labels propagate to every device.</Feature>
+            <Feature icon="radio" title="Record triggers">Send and receive record triggers to your motion capture systems.</Feature>
+            <Feature icon="clock" title="Frame-accurate sync">LTC input supports distributed timecode sync into the ARK Recorders. Every ARK Recorder stays synced across the entire shoot day.</Feature>
+            <Feature icon="activity" title="Live fleet monitor">Battery, storage, device health, network quality, rec state and much more — surfaced for every device simultaneously.</Feature>
+            <Feature icon="download" title="Footage ingest">Download as you go. Commander lets you sync your recordings to a network location as you shoot. Or wait till the session ends — the choice is yours.</Feature>
           </div>
         </div>
       </section>
@@ -51,8 +48,9 @@ function CommanderPage() {
           <div className="head">
             <span className="eyebrow">Trigger integrations</span>
             <h2>Talks to the systems already on your stage.</h2>
-            <p>ARK Commander sends and receives UDP triggers to synchronize facial capture with body motion capture. Start recording on ARK when body capture starts. Stop when it stops. Or drive both from Commander.</p>
+            <p>ARK Commander sends and receives record triggers to synchronize facial capture with other motion capture systems. Start recording on ARK when body capture starts. Stop when it stops. Or drive both from Commander.</p>
           </div>
+          {/*
           <div className="compat">
             <span className="lbl">Supported systems</span>
             <span className="item">OptiTrack</span>
@@ -62,6 +60,7 @@ function CommanderPage() {
             <span className="item">Peel Capture</span>
             <span className="item">Movella</span>
           </div>
+          */}
         </div>
       </section>
 
@@ -70,7 +69,7 @@ function CommanderPage() {
           <div className="head">
             <span className="eyebrow">The workflow</span>
             <h2>Project. Session. Shot. Take.</h2>
-            <p>Commander structures your shoot day into a hierarchy that maps directly to your pipeline. No renaming. No folder shuffling. The footage arrives where it belongs.</p>
+            <p>Commander structures your shoot day into a hierarchy that maps directly to your pipeline. The footage arrives where it belongs.</p>
           </div>
           <FleetMock large />
         </div>
@@ -113,24 +112,7 @@ function CommanderPage() {
           <div className="feature-grid" style={{marginTop:48}}>
             <Feature icon="library" title="Complete shot history">Every shot and take from every session, searchable and filterable. See what's been captured at a glance.</Feature>
             <Feature icon="upload" title="Import shot lists">Bring in an existing shot list from pre-production. Assign shots to current sessions or create draft sessions for future shoot days.</Feature>
-            <Feature icon="calendar" title="Plan ahead">Create draft sessions and pre-assign shots before the stage is booked. When the day arrives, the plan is already loaded.</Feature>
-          </div>
-        </div>
-      </section>
-
-      <section className="stat-band">
-        <div className="inner">
-          <div className="stat">
-            <div className="num">&lt;1 fr</div>
-            <div className="label">drift between devices across an entire shoot day with LTC distributed by Commander.</div>
-          </div>
-          <div className="stat">
-            <div className="num">UDP</div>
-            <div className="label">trigger protocol for body mocap integration. Send, receive, or both — per system.</div>
-          </div>
-          <div className="stat">
-            <div className="num">1 tap</div>
-            <div className="label">to arm every actor. One more to start recording. One more to ingest. That's the loop.</div>
+            <Feature icon="calendar" title="Plan ahead">Create draft sessions and pre-assign shots before the stage is booked. When the day arrives, the plan is already in place.</Feature>
           </div>
         </div>
       </section>
@@ -148,7 +130,6 @@ function CommanderPage() {
                 <i data-lucide="apple"></i>
               </div>
               <h4>macOS</h4>
-              <p>Apple Silicon and Intel. macOS 13 Ventura or newer. Universal binary, notarized.</p>
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>Request a demo</button>
             </div>
             <div className="platform-card">
@@ -156,7 +137,6 @@ function CommanderPage() {
                 <i data-lucide="monitor"></i>
               </div>
               <h4>Windows</h4>
-              <p>Windows 10 / 11 · x64. Signed installer. Standalone or via MDM.</p>
               <button className="btn btn-primary" onClick={() => location.hash = '/contact'}>Request a demo</button>
             </div>
           </div>
@@ -169,23 +149,6 @@ function CommanderPage() {
             <span className="eyebrow">Pricing</span>
             <h2>Annual subscription. Scales with your stage.</h2>
             <p>ARK Commander is licensed as a yearly subscription. Pricing scales with the number of ARK Recorders on your network. Every ARK Recorder works standalone without Commander — Commander adds project management, fleet control, and trigger sync.</p>
-          </div>
-          <div className="use-cases">
-            <div className="use-case">
-              <div className="label">Subscription</div>
-              <h4>Yearly license</h4>
-              <p>Scales with the number of ARK Recorders on your network. Includes all updates.</p>
-            </div>
-            <div className="use-case">
-              <div className="label">API</div>
-              <h4>REST + WebSocket</h4>
-              <p>Open API for stage automation, engine integration, and custom control surfaces.</p>
-            </div>
-            <div className="use-case">
-              <div className="label">Trial</div>
-              <h4>Free evaluation</h4>
-              <p>Talk to us about a trial against your existing hardware setup.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -319,20 +282,16 @@ function ContactPage() {
             </p>
             <div style={{marginTop:32, display:'flex', flexDirection:'column', gap:16, font:'var(--type-body-md)', color:'var(--fg-muted)'}}>
               <div>
-                <div style={{font:'var(--type-label-sm)', textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--c-aqua)', marginBottom:6}}>Studio</div>
-                hello@mantalabs.com
+                <div style={{font:'var(--type-label-sm)', textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--c-aqua)', marginBottom:6}}>Sales</div>
+                sales@mantalabs.ai
               </div>
               <div>
                 <div style={{font:'var(--type-label-sm)', textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--c-aqua)', marginBottom:6}}>Support</div>
-                support@mantalabs.com
-              </div>
-              <div>
-                <div style={{font:'var(--type-label-sm)', textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--c-aqua)', marginBottom:6}}>Press</div>
-                press@mantalabs.com
+                support@mantalabs.ai
               </div>
             </div>
           </div>
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{
+          <form action="https://formspree.io/f/xaqvgpeo" method="POST" onSubmit={(e) => { e.preventDefault(); fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers: {'Accept':'application/json'} }).then(r => { if(r.ok) setSent(true); }); }} style={{
             padding: 32, background: 'var(--c-abyss)', border: '1px solid var(--border)', borderRadius: 16,
             display: 'flex', flexDirection: 'column', gap: 18
           }}>
@@ -343,11 +302,11 @@ function ContactPage() {
               </div>
             ) : (
               <>
-                <Field label="Name" placeholder="Jamie Thorne" />
-                <Field label="Studio" placeholder="Studio name" />
-                <Field label="Email" type="email" placeholder="you@studio.com" />
-                <Field label="Setup" placeholder="e.g. 4 actors, SDI headcams, mocap stage with OptiTrack" />
-                <Field label="What are you trying to do?" textarea placeholder="A few sentences. Capture format, pipeline, timeline, body mocap system if relevant." />
+                <Field label="Name" name="name" placeholder="Jamie Thorne" />
+                <Field label="Studio" name="studio" placeholder="Studio name" />
+                <Field label="Email" name="email" type="email" placeholder="you@studio.com" />
+                <Field label="Setup" name="setup" placeholder="e.g. 4 actors, SDI headcams, mocap stage with OptiTrack" />
+                <Field label="What are you trying to do?" name="message" textarea placeholder="A few sentences. Capture format, pipeline, timeline, body mocap system if relevant." />
                 <button type="submit" className="btn btn-primary" style={{justifyContent:'center'}}>Send request</button>
               </>
             )}
@@ -358,7 +317,7 @@ function ContactPage() {
   );
 }
 
-function Field({ label, placeholder, type='text', textarea }) {
+function Field({ label, name, placeholder, type='text', textarea }) {
   const sty = {
     font:'400 15px/1.5 var(--font-body)', color:'var(--fg)',
     background:'rgba(11,19,38,0.6)',
@@ -371,8 +330,8 @@ function Field({ label, placeholder, type='text', textarea }) {
     <label style={{display:'flex', flexDirection:'column', gap:6}}>
       <span style={{font:'var(--type-label-sm)', textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--fg-subtle)'}}>{label}</span>
       {textarea
-        ? <textarea rows={4} placeholder={placeholder} style={{...sty, resize:'vertical', minHeight:96}} />
-        : <input type={type} placeholder={placeholder} style={sty} />
+        ? <textarea name={name} rows={4} placeholder={placeholder} style={{...sty, resize:'vertical', minHeight:96}} />
+        : <input name={name} type={type} placeholder={placeholder} style={sty} />
       }
     </label>
   );

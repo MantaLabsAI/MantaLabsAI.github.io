@@ -63,38 +63,19 @@ function Footer() {
             <img src={MANTA_GLYPH} alt="" />
             <span>MANTA<span className="labs">LABS</span></span>
           </a>
-          <p>Purpose-built recording infrastructure for facial motion capture. On-body hardware and networked software for the headcam pipeline.</p>
+          <p>Purpose-built recording infrastructure for facial motion capture.</p>
         </div>
         <div>
-          <h5>Hardware</h5>
+          <h5>Products</h5>
           <ul>
             <li><a href="#/ark">ARK Recorder</a></li>
-            <li><a href="#/ark#specs">Specifications</a></li>
-            <li><a href="#/ark#compatibility">Compatibility</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Software</h5>
-          <ul>
             <li><a href="#/commander">ARK Commander</a></li>
-            <li><a href="#/commander#workflow">Workflow</a></li>
-            <li><a href="#/commander#integrations">Integrations</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Resources</h5>
-          <ul>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Integration guides</a></li>
-            <li><a href="#">Support</a></li>
           </ul>
         </div>
         <div>
           <h5>Company</h5>
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
+            <li><a href="#/about">About</a></li>
             <li><a href="#/contact">Contact</a></li>
           </ul>
         </div>
