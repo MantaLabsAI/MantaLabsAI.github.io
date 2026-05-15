@@ -91,7 +91,7 @@ function ProductSplit() {
           <p className="tagline">Captures headcam footage directly to internal storage — on the actor without worrying about wireless interruption. Works standalone via its built-in web interface or network control under ARK Commander.</p>
           <div className="visual">
             <div style={{position:'absolute', inset:0, background:'var(--c-deep-navy)', overflow:'hidden', borderRadius:'inherit', display:'flex', alignItems:'center', justifyContent:'center'}}>
-              <img src="assets/photos/OBR_bebob_nobackground.png" alt="ARK Recorder with Bebob A45 battery" style={{width:'90%', height:'90%', objectFit:'contain'}} />
+              <img src="assets/photos/OBR_bebob_nobackground.png" alt="ARK Recorder with Bebob A45 battery" style={{width:'100%', height:'100%', objectFit:'cover'}} />
             </div>
           </div>
           <div className="footer-row">
